@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     java
-
+    id("org.danilopianini.gradle-java-qa") version "1.152.0"
 }
 
 repositories {
@@ -18,11 +18,15 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+spotbugs {
+    omitVisitors.set(listOf("UnreadFields"))
+}
+
 tasks.withType<Test> {
     // Use junit platform for unit tests
     useJUnitPlatform()
     testLogging {
         events(*(TestLogEvent.values())) // events("passed", "skipped", "failed")
     }
-    testLogging.showStandardStreams = true
+    testLogging.showStandardStreams = true    
 }

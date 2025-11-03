@@ -1,5 +1,6 @@
 plugins {
     java
+    id("org.danilopianini.gradle-java-qa") version "1.152.0"
 }
 
 repositories {
@@ -19,6 +20,10 @@ tasks.test {
     useJUnitPlatform()
     testLogging { events("passed", "skipped", "failed") }
     testLogging.showStandardStreams = true
+}
+
+spotbugs {
+    omitVisitors.set(listOf("ComparatorIdiom"))
 }
 
 tasks.javadoc {
