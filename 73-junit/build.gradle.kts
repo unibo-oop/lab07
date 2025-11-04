@@ -22,11 +22,11 @@ spotbugs {
     omitVisitors.set(listOf("UnreadFields"))
 }
 
-tasks.withType<Test> {
+tasks.withType<Test>().configureEach {
     // Use junit platform for unit tests
     useJUnitPlatform()
     testLogging {
-        events(*(TestLogEvent.values())) // events("passed", "skipped", "failed")
+        events(*(TestLogEvent.entries.toTypedArray())) // events("passed", "skipped", "failed")
     }
     testLogging.showStandardStreams = true    
 }
