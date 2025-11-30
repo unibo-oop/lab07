@@ -18,10 +18,6 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-spotbugs {
-    omitVisitors.set(listOf("UnreadFields"))
-}
-
 tasks.withType<Test>().configureEach {
     // Use junit platform for unit tests
     useJUnitPlatform()
