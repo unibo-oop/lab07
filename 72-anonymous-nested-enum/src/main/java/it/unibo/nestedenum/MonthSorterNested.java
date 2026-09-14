@@ -12,6 +12,13 @@ public final class MonthSorterNested implements MonthSorter {
     private static final Comparator<String> BY_DAYS = new SortByDays();
     private static final Comparator<String> BY_ORDER = new SortByMonthOrder();
 
+    /**
+     * Creates a month sorter.
+     */
+    public MonthSorterNested() {
+        // No state to initialize. The explicit constructor lets us document the public constructor.
+    }
+
     @Override
     public Comparator<String> sortByDays() {
         return BY_DAYS;
@@ -43,7 +50,7 @@ public final class MonthSorterNested implements MonthSorter {
             this.days = days;
         }
 
-        public static Month fromString(final String name) {
+        static Month fromString(final String name) {
             Objects.requireNonNull(name);
             try {
                 return valueOf(name);
