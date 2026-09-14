@@ -69,7 +69,7 @@ public final class Assertions {
 
 
     private static void confirmOK(final Object expected, final Object actual) {
-        System.out.println(EXPECTED_HEADER + expected + " expected, and " + actual + " received."); // NOPMD
+        IO.println(EXPECTED_HEADER + expected + " expected, and " + actual + " received.");
     }
 
     private static void onNotEquals(final Object expected, final Object actual) {
