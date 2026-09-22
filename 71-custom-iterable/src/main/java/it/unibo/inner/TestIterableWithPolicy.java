@@ -22,7 +22,7 @@ public class TestIterableWithPolicy {
         return null; // TODO: return the implementation of IterableWithPolicy
     }
 
-    public static void main(final String[] args) {
+    public static void main() {
         final String[] test1 = { "pippo", "pluto", "foo", "bar" };
         // Create filters
         final Predicate<String> filterPippoPluto = new Predicate<>() {
