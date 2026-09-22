@@ -15,7 +15,7 @@ public class TestIterablePlain {
         return new IterableWithPolicyImpl<>(elements);
     }
 
-    public static void main(final String[] args) {
+    public static void main() {
         final String[] test1 = { "pippo", "pluto", "paperino" };
         final IterableWithPolicy<String> evenIterable = getIterableWithPolicy(test1);
         assertContentEqualsInOrder(List.of("pippo", "pluto", "paperino"), evenIterable);
