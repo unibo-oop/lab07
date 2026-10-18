@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.danilopianini.gradle-java-qa") version "1.197.0"
+    id("org.danilopianini.gradle-java-qa") version "1.199.0"
 }
 
 repositories {
@@ -23,7 +23,9 @@ tasks.test {
 }
 
 spotbugs {
-    omitVisitors.set(listOf("ComparatorIdiom"))
+    // FindOverridableMethodCall flags the double-brace initialization in the tests,
+    // which is used on purpose to showcase anonymous classes
+    omitVisitors.set(listOf("ComparatorIdiom", "FindOverridableMethodCall"))
 }
 
 tasks.javadoc {
